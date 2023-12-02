@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Nota Fiscal de Serviço</title>
+</head>
+
+<body>
+
+  <head></head>
+  <main class="conteudo">
+    <h1 class="conteudo__titulo">Nota Fiscal de Serviço</h1>
+    <div class="informacoes__container">
+      <div class="informacoes">
+        <h3>Prestador de Serviços</h2>
+          <form class="formulario" action="">
+            <div>
+              <label for="nome">Razão Social/Nome:</label>
+              <input class="campo" type="text" id="prestador-nome" />
+            </div>
+            <div>
+              <label for="documento">CNPJ/CPF:
+              </label>
+              <input class="campo" type="text" id="prestador-documento" />
+            </div>
+            <div>
+              <label for="inscricaoMunicipal">Inscrição Municipal:</label>
+              <input class="campo" type="text" id="prestador-inscricaoMunicipal" />
+            </div>
+            <div>
+              <label for="endereco">Endereço:</label>
+              <input class="campo" type="text" id="prestador-endereco" />
+            </div>
+            <div>
+              <label for="municipio">Município:</label>
+              <input class="campo" type="text" id="prestador-municipio" />
+            </div>
+            <div>
+              <label for="uf">UF:</label>
+              <input class="campo" type="text" id="prestador-uf" />
+            </div>
+          </form>
+          <div class="botaoSalvar">
+            <p class="alerta">*campo obrigatório</p>
+            <button class="botao" onclick="salvaDados()">Salvar</button>
+            <span class="mensagemErro"></span>
+          </div>
+      </div>
+      <div class="informacoes">
+        <h3>Tomador do serviço</h2>
+          <form class="formulario" action="">
+            <div>
+              <label for="nome">Razão Social/Nome:</label>
+              <input class="campo" type="text" />
+            </div>
+            <div>
+              <label for="documento">CNPJ/CPF:
+              </label>
+              <input class="campo" type="text" />
+            </div>
+            <div>
+              <label for="inscricaoMunicipal">Inscrição Municipal:</label>
+              <input class="campo" type="text" />
+            </div>
+            <div>
+              <label for="endereco">Endereço:</label>
+              <input class="campo" type="text" />
+            </div>
+            <div>
+              <label for="municipio">Município:</label>
+              <input class="campo" type="text" />
+            </div>
+            <div>
+              <label for="uf">UF:</label>
+              <input class="campo" type="text" />
+            </div>
+          </form>
+          <div class="botaoSalvar">
+            <p class="alerta">*campo obrigatório</p>
+            <button class="botao" onclick="salvaDados()">Salvar</button>
+            <span class="mensagemErro"></span>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="notaFiscal">
+      <h2>Nota Fiscal</h2>
+      <div class="dadosPrestador">
+        <p>Razão Social/Nome:</p>
+        <span class="nome-prestador">-</span>
+        <p>CNPJ/CPF:</p>
+        <span class="documento-prestador">-</span>
+        <p>Inscricao Municipal:</p>
+        <span class="inscricaoMunicipal-prestador">-</span>
+        <p>Endereço:</p>
+        <span class="endereco-prestador">-</span>
+        <p>Município:</p>
+        <span class="municipio-prestador">-</span>
+        <p>UF</p>
+        <span class="uf-prestador">-</span>
+
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+
+  <script src="main.js" defer></script>
+</body>
+
+</html>
