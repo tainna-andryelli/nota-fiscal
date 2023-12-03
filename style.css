@@ -26,17 +26,12 @@ body {
   line-height: 1;
 }
 
-.informacoes__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
 .informacoes {
   font-size: 1.5rem;
   padding: 40px;
   background-color: #e7e7e7;
   border-radius: 4px;
+  margin-bottom: 40px;
 }
 
 .informacoes h3 {
@@ -44,20 +39,32 @@ body {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 40px;
-  color: #141414;
+  color: #fff;
+  background-color: #757780;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 .formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   border-radius: 4px;
   margin-bottom: 30px;
 }
 
+.formulario div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .formulario label {
   color: #141414;
+  width: 100%;
 }
 
 .formulario .campo {
-  padding: 10px;
+  padding: 20px;
   background-color: #f5f5f5;
   border: none;
   font-size: 1.125rem;
@@ -66,7 +73,7 @@ body {
   margin-bottom: 10px;
 }
 
-.botaoSalvar {
+.formulario .campo .botaoSalvar {
   text-align: end;
 }
 
@@ -85,9 +92,90 @@ body {
   color: #fff;
 }
 
+.mensagemErro {
+  display: block;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.nota {
+  border: 2px solid #141414;
+}
+
+.nota .titulo {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-bottom: 40px;
+}
+
+.nota .titulo__informacoes {
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px solid #141414;
+  font-size: 1.125rem;
+  align-self: center;
+}
+
+.nota .formulario {
+  grid-template-columns: 1fr 3fr;
+}
+
+.formulario span {
+  background-color: #fff;
+  height: 4ch;
+  border-radius: 4px;
+}
+
+.nota .descricao__container {
+  background-color: #fff;
+  height: 200px;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.valor__container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.impostos {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  font-size: 1.125rem;
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px solid #141414;
+  margin-bottom: 40px;
+  justify-content: space-between;
+}
+
+.impostos .grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.descricao__container {
+  font-size: 1.125rem;
+}
+
 @media (max-width: 1000px) {
   .informacoes__container {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .nota .formulario {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }

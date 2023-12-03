@@ -15,8 +15,8 @@
     <h1 class="conteudo__titulo">Nota Fiscal de Serviço</h1>
     <div class="informacoes__container">
       <div class="informacoes">
-        <h3>Prestador de Serviços</h2>
-          <form class="formulario" action="">
+        <h3>Prestador de Serviço</h2>
+          <form class="formulario">
             <div>
               <label for="nome">Razão Social/Nome:</label>
               <input class="campo" type="text" id="prestador-nome" />
@@ -40,73 +40,208 @@
             </div>
             <div>
               <label for="uf">UF:</label>
-              <input class="campo" type="text" id="prestador-uf" />
+              <select class="campo" id="prestador-uf">
+                <option>Selecione</option>
+                <option>Acre (AC)</option>
+                <option>Alagoas (AL)</option>
+                <option>Amapá (AP)</option>
+                <option>Amazonas (AM)</option>
+                <option>Bahia (BA)</option>
+                <option>Ceará (CE)</option>
+                <option>Distrito Federal (DF)</option>
+                <option>Espírito Santo (ES)</option>
+                <option>Goiás (GO)</option>
+                <option>Maranhão (MA)</option>
+                <option>Mato Grosso (MT)</option>
+                <option>Mato Grosso do Sul (MS)</option>
+                <option>Minas Gerais (MG)</option>
+                <option>Pará (PA)</option>
+                <option>Paraíba (PB)</option>
+                <option>Paraná (PR)</option>
+                <option>Pernambuco (PE)</option>
+                <option>Piauí (PI)</option>
+                <option>Rio de Janeiro (RJ)</option>
+                <option>Rio Grande do Norte (RN)</option>
+                <option>Rio Grande do Sul (RS)</option>
+                <option>Rondônia (RO)</option>
+                <option>Roraima (RR)</option>
+                <option>Santa Catarina (SC)</option>
+                <option>São Paulo (SP)</option>
+                <option>Sergipe (SE)</option>
+                <option>Tocantins (TO)</option>
+              </select>
             </div>
           </form>
-          <div class="botaoSalvar">
-            <p class="alerta">*campo obrigatório</p>
-            <button class="botao" onclick="salvaDados()">Salvar</button>
-            <span class="mensagemErro"></span>
-          </div>
       </div>
       <div class="informacoes">
         <h3>Tomador do serviço</h2>
-          <form class="formulario" action="">
+          <form class="formulario">
             <div>
               <label for="nome">Razão Social/Nome:</label>
-              <input class="campo" type="text" />
+              <input class="campo" type="text" id="tomador-nome" />
             </div>
             <div>
               <label for="documento">CNPJ/CPF:
               </label>
-              <input class="campo" type="text" />
+              <input class="campo" type="text" id="tomador-documento" />
             </div>
             <div>
               <label for="inscricaoMunicipal">Inscrição Municipal:</label>
-              <input class="campo" type="text" />
+              <input class="campo" type="text" id="tomador-inscricaoMunicipal" />
             </div>
             <div>
               <label for="endereco">Endereço:</label>
-              <input class="campo" type="text" />
+              <input class="campo" type="text" id="tomador-endereco" />
             </div>
             <div>
               <label for="municipio">Município:</label>
-              <input class="campo" type="text" />
+              <input class="campo" type="text" id="tomador-municipio" />
             </div>
             <div>
               <label for="uf">UF:</label>
-              <input class="campo" type="text" />
+              <select class="campo" id="tomador-uf">
+                <option>Selecione</option>
+                <option>Acre (AC)</option>
+                <option>Alagoas (AL)</option>
+                <option>Amapá (AP)</option>
+                <option>Amazonas (AM)</option>
+                <option>Bahia (BA)</option>
+                <option>Ceará (CE)</option>
+                <option>Distrito Federal (DF)</option>
+                <option>Espírito Santo (ES)</option>
+                <option>Goiás (GO)</option>
+                <option>Maranhão (MA)</option>
+                <option>Mato Grosso (MT)</option>
+                <option>Mato Grosso do Sul (MS)</option>
+                <option>Minas Gerais (MG)</option>
+                <option>Pará (PA)</option>
+                <option>Paraíba (PB)</option>
+                <option>Paraná (PR)</option>
+                <option>Pernambuco (PE)</option>
+                <option>Piauí (PI)</option>
+                <option>Rio de Janeiro (RJ)</option>
+                <option>Rio Grande do Norte (RN)</option>
+                <option>Rio Grande do Sul (RS)</option>
+                <option>Rondônia (RO)</option>
+                <option>Roraima (RR)</option>
+                <option>Santa Catarina (SC)</option>
+                <option>São Paulo (SP)</option>
+                <option>Sergipe (SE)</option>
+                <option>Tocantins (TO)</option>
+              </select>
             </div>
           </form>
-          <div class="botaoSalvar">
-            <p class="alerta">*campo obrigatório</p>
-            <button class="botao" onclick="salvaDados()">Salvar</button>
-            <span class="mensagemErro"></span>
+      </div>
+
+      <div class="informacoes">
+        <h3>Informações da Nota:</h3>
+        <form class="formulario">
+          <div>
+            <label for="valor">Valor do Serviço:</label>
+            <input class="campo" type="text" id="valor" />
           </div>
+          <div>
+            <label for="descricao">Descrição:</label>
+            <input class="campo" type="text" id="descricao" />
+          </div>
+        </form>
+        <div class="botaoSalvar">
+          <p class="alerta">*campos obrigatórios</p>
+          <button class="botao" onclick="salvaDados()">Gerar Nota</button>
+          <span class="mensagemErro"></span>
+        </div>
       </div>
     </div>
 
 
-    <div class="notaFiscal">
-      <h2>Nota Fiscal</h2>
-      <div class="dadosPrestador">
+
+    <div class="informacoes nota">
+      <div class="titulo">
+        <div>
+          <h2>Nota Fiscal de Serviços Eletrônica - NFS-e</h2>
+          <h4>Munício de <span class="municipio"></span></h4>
+          <h4>Secretaria Municipal da Fazenda</h4>
+        </div>
+        <div class="titulo__informacoes">
+          <p><strong>Número:</strong> 99999-99</p>
+          <p><strong>Data e Hora de Emissão:</strong> 00/00/00 00:00</p>
+          <p><strong>Código de Verificação:</strong> XXXX-XXXX</p>
+        </div>
+      </div>
+      <h3>Prestador de Serviço</h3>
+      <div class="formulario">
         <p>Razão Social/Nome:</p>
-        <span class="nome-prestador">-</span>
+        <span class="prestador-nome"></span>
         <p>CNPJ/CPF:</p>
-        <span class="documento-prestador">-</span>
+        <span class="prestador-documento"></span>
         <p>Inscricao Municipal:</p>
-        <span class="inscricaoMunicipal-prestador">-</span>
+        <span class="prestador-inscricaoMunicipal"></span>
         <p>Endereço:</p>
-        <span class="endereco-prestador">-</span>
+        <span class="prestador-endereco"></span>
         <p>Município:</p>
-        <span class="municipio-prestador">-</span>
-        <p>UF</p>
-        <span class="uf-prestador">-</span>
+        <span class="prestador-municipio"></span>
+        <p>UF:</p>
+        <span class="prestador-uf"></span>
+      </div>
+      <h3>Tomador de Serviço</h3>
+      <div class="formulario">
+        <p>Razão Social/Nome:</p>
+        <span class="tomador-nome"></span>
+        <p>CNPJ/CPF:</p>
+        <span class="tomador-documento"></span>
+        <p>Inscricao Municipal:</p>
+        <span class="tomador-inscricaoMunicipal"></span>
+        <p>Endereço:</p>
+        <span class="tomador-endereco"></span>
+        <p>Município:</p>
+        <span class="tomador-municipio"></span>
+        <p>UF:</p>
+        <span class="tomador-uf"></span>
+      </div>
+      <h3>Descrição dos Serviços:</h3>
+      <div class="descricao__container">
+        <span class="descricao"></span>
+      </div>
 
+      <div class="valor__container">
+        <h4>Valor do Serviço: </h4>
+        <p>R$ <span class="valor"></span></p>
+      </div>
+
+      <div class="impostos">
+        <div class="grupo">
+          <p>Valor Total das Deduções (R$)</p>
+          <p>0,00</p>
+        </div>
+        <div class="grupo">
+          <p>Base de Cálculo (R$)</p>
+          <p>0,00</p>
+        </div>
+        <div class="grupo">
+          <p>Alíquota (%)</p>
+          <p>0,00%</p>
+        </div>
+        <div class="grupo">
+          <p>Valor do ISS (R$)</p>
+          <p>0,00</p>
+        </div>
+        <div class="grupo">
+          <p>Crédito p/ Abatimento do IPTU</p>
+          <p>0,00</p>
+        </div>
+      </div>
+
+      <h3>Outras Informações</h3>
+      <div class="descricao__container">
+        <p>- O crédito gerado estará disponível após o recolhimento do ISS desta NF-e</p>
+        <p>- Data de vencimento do ISS desta NF-e: 00/00/0000</p>
       </div>
     </div>
+
   </main>
-  <footer></footer>
+  <footer>
+    <p>Desenvolvido por Tainná Andryelli Ribeiro.</p>
+  </footer>
 
   <script src="main.js" defer></script>
 </body>

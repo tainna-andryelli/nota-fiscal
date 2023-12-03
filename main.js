@@ -12,14 +12,14 @@ function salvaDados() {
 
   if (nome == "") {
     document.querySelector(".mensagemErro").innerHTML =
-      "*campos obrigatórios não foram preenchidos.";
-    limparCampos();
+      "Atenção: Campos obrigatórios não foram preenchidos.";
   } else {
     for (let i = 0; i < lista.length; i++) {
       let informacao = lista[i];
-      console.log(informacao);
-      document.querySelector("." + informacao + "-prestador").innerHTML =
+      document.querySelector(".prestador-" + informacao).innerHTML =
         document.getElementById("prestador-" + informacao).value;
+      document.querySelector(".tomador-" + informacao).innerHTML =
+        document.getElementById("tomador-" + informacao).value;
     }
     limparCampos();
   }
