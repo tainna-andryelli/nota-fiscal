@@ -8,9 +8,8 @@ function salvaDados() {
     "uf",
   ];
 
-  let nome = document.getElementById("prestador-nome").value;
-
-  if (nome == "") {
+  if (camposObrigatoriosNaoPreenchidos()) {
+    console.log(camposObrigatoriosNaoPreenchidos());
     document.querySelector(".mensagemErro").innerHTML =
       "Atenção: Campos obrigatórios não foram preenchidos.";
   } else {
@@ -34,4 +33,29 @@ function limparCampos() {
   document.querySelectorAll(".campo").forEach((e) => {
     e.value = "";
   });
+}
+
+function camposObrigatoriosNaoPreenchidos() {
+  let camposObrigatorios = [
+    "nome",
+    "documento",
+    "inscricaoMunicipal",
+    "endereco",
+    "municipio",
+  ];
+
+  for (let i = 0; i < camposObrigatorios.length; i++) {
+    informacao = camposObrigatorios[i];
+    if (
+      document.getElementById("prestador-" + informacao).value == "" ||
+      document.getElementById("prestador-uf").value == "Selecione" ||
+      document.getElementById("tomador-" + informacao).value == "" ||
+      document.getElementById("tomador-uf") == "Selecione" ||
+      document.getElementById("valor").value == ""
+    ) {
+      return true;
+    }
+  }
+
+  return false;
 }
