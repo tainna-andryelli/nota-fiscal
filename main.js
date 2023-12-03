@@ -18,8 +18,13 @@ function salvaDados() {
       let informacao = lista[i];
       document.querySelector(".prestador-" + informacao).innerHTML =
         document.getElementById("prestador-" + informacao).value;
+
       document.querySelector(".tomador-" + informacao).innerHTML =
         document.getElementById("tomador-" + informacao).value;
+
+      document.querySelector(".municipio").innerHTML = document.getElementById(
+        "prestador-municipio"
+      ).value;
     }
     limparCampos();
   }
