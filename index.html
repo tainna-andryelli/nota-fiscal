@@ -138,7 +138,7 @@
         <form class="formulario">
           <div>
             <label for="valor">Valor do Serviço: <span class="documento__span">(somente números)</span></label>
-            <input class="campo" type="text" id="valor" />
+            <input class="campo" type="text" id="valor" placeholder="Digite aqui" onKeyPress="return(moeda(this,'.',',',event))" />
           </div>
           <div>
             <label for="descricao">Descrição:</label>
