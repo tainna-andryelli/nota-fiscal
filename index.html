@@ -24,7 +24,7 @@
             <div>
               <label for="documento">CNPJ/CPF: <span class="documento__span">(somente números)</span>
               </label>
-              <input class="campo" type="text" id="prestador-documento" />
+              <input class="campo" type="text" id="prestador-documento" onfocus="javascript: retirarFormatacao(this);" onblur="javascript: formatarCampo(this);" maxlength="14" />
             </div>
             <div>
               <label for="inscricaoMunicipal">Inscrição Municipal: <span class="documento__span">(somente números)</span></label>
@@ -83,7 +83,7 @@
             <div>
               <label for="documento">CNPJ/CPF: <span class="documento__span">(somente números)</span>
               </label>
-              <input class="campo" type="text" id="tomador-documento" />
+              <input class="campo" type="text" id="tomador-documento" onfocus="javascript: retirarFormatacao(this);" onblur="javascript: formatarCampo(this);" maxlength="14" />
             </div>
             <div>
               <label for="inscricaoMunicipal">Inscrição Municipal: <span class="documento__span">(somente números)</span></label>
