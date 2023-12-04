@@ -18,28 +18,28 @@
         <h3>Prestador de Serviço</h2>
           <form class="formulario">
             <div>
-              <label for="prestador-nome">Razão Social/Nome:</label>
+              <label for="prestador-nome">Razão Social/Nome:*</label>
               <input class="campo" type="text" id="prestador-nome" />
             </div>
             <div>
-              <label for="prestador-documento">CNPJ/CPF: <span class="documento__span">(somente números)</span>
+              <label for="prestador-documento">CNPJ/CPF:* <span class="documento__span">(somente números)</span>
               </label>
               <input class="campo" type="text" id="prestador-documento" onfocus="javascript: retirarFormatacao(this);" onblur="javascript: formatarCampo(this);" maxlength="14" />
             </div>
             <div>
-              <label for="prestador-inscricaoMunicipal">Inscrição Municipal: <span class="documento__span">(somente números)</span></label>
+              <label for="prestador-inscricaoMunicipal">Inscrição Municipal:* <span class="documento__span">(somente números)</span></label>
               <input class="campo" type="text" id="prestador-inscricaoMunicipal" />
             </div>
             <div>
-              <label for="prestador-endereco">Endereço:</label>
+              <label for="prestador-endereco">Endereço:*</label>
               <input class="campo" type="text" id="prestador-endereco" />
             </div>
             <div>
-              <label for="prestador-municipio">Município:</label>
+              <label for="prestador-municipio">Município:*</label>
               <input class="campo" type="text" id="prestador-municipio" />
             </div>
             <div>
-              <label for="prestador-uf">UF:</label>
+              <label for="prestador-uf">UF:*</label>
               <select class="campo" id="prestador-uf">
                 <option>Selecione</option>
                 <option>Acre (AC)</option>
@@ -77,28 +77,28 @@
         <h3>Tomador do serviço</h2>
           <form class="formulario">
             <div>
-              <label for="tomador-nome">Razão Social/Nome:</label>
+              <label for="tomador-nome">Razão Social/Nome:*</label>
               <input class="campo" type="text" id="tomador-nome" />
             </div>
             <div>
-              <label for="tomador-documento">CNPJ/CPF: <span class="documento__span">(somente números)</span>
+              <label for="tomador-documento">CNPJ/CPF:* <span class="documento__span">(somente números)</span>
               </label>
               <input class="campo" type="text" id="tomador-documento" onfocus="javascript: retirarFormatacao(this);" onblur="javascript: formatarCampo(this);" maxlength="14" />
             </div>
             <div>
-              <label for="tomador-inscricaoMunicipal">Inscrição Municipal: <span class="documento__span">(somente números)</span></label>
+              <label for="tomador-inscricaoMunicipal">Inscrição Municipal:* <span class="documento__span">(somente números)</span></label>
               <input class="campo" type="text" id="tomador-inscricaoMunicipal" />
             </div>
             <div>
-              <label for="tomador-endereco">Endereço:</label>
+              <label for="tomador-endereco">Endereço:*</label>
               <input class="campo" type="text" id="tomador-endereco" />
             </div>
             <div>
-              <label for="tomador-municipio">Município:</label>
+              <label for="tomador-municipio">Município:*</label>
               <input class="campo" type="text" id="tomador-municipio" />
             </div>
             <div>
-              <label for="tomador-uf">UF:</label>
+              <label for="tomador-uf">UF:*</label>
               <select class="campo" id="tomador-uf">
                 <option>Selecione</option>
                 <option>Acre (AC)</option>
@@ -137,7 +137,7 @@
         <h3>Informações da Nota:</h3>
         <form class="formulario">
           <div>
-            <label for="valor">Valor do Serviço: <span class="documento__span">(somente números)</span></label>
+            <label for="valor">Valor do Serviço:* <span class="documento__span">(somente números)</span></label>
             <input class="campo" type="text" id="valor" placeholder="Digite aqui" onKeyPress="return(moeda(this,'.',',',event))" />
           </div>
           <div>
