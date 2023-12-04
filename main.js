@@ -3,14 +3,9 @@ function salvaDados() {
     document.querySelector(".mensagemErro").innerHTML =
       "Atenção: Campos obrigatórios não foram preenchidos.";
   } else {
-    if (campoNumericoIncorreto()) {
-      mudaBordaParaVermelho("prestador-documento");
-      mudaBordaParaVermelho("tomador-documento");
-      mudaBordaParaVermelho("valor");
-      document.querySelector(".mensagemErro").innerHTML =
-        "Atenção: Campos numéricos foram preenchidos inadequadamente.";
-    } else {
+    if (verificaCampoNumerico()) {
       calculaImposto();
+
       let lista = [
         "nome",
         "documento",
@@ -19,6 +14,7 @@ function salvaDados() {
         "municipio",
         "uf",
       ];
+
       for (let i = 0; i < lista.length; i++) {
         let informacao = lista[i];
         document.querySelector(".prestador-" + informacao).innerHTML =
@@ -103,11 +99,47 @@ function tiraBordaVermelha(elemento) {
   document.getElementById(elemento).style.border = "none";
 }
 
+function verificaCampoNumerico() {
+  console.log(campoNumericoIncorreto());
+  if (campoNumericoIncorreto()) {
+    mudaBordaParaVermelho("prestador-documento");
+    mudaBordaParaVermelho("tomador-documento");
+    mudaBordaParaVermelho("valor");
+    mudaBordaParaVermelho("prestador-inscricaoMunicipal");
+    mudaBordaParaVermelho("tomador-inscricaoMunicipal");
+    document.querySelector(".mensagemErro").innerHTML =
+      "Atenção: Campos numéricos foram preenchidos inadequadamente.";
+    return false;
+  } else {
+    return true;
+  }
+}
+
 function campoNumericoIncorreto() {
+  let prestadorDocumento = document
+    .getElementById("prestador-documento")
+    .value.replace(/(\.|\/|\-)/g, "");
+
+  let tomadorDocumento = document
+    .getElementById("tomador-documento")
+    .value.replace(/(\.|\/|\-)/g, "");
+
+  let prestadorInscricao = document.getElementById(
+    "prestador-inscricaoMunicipal"
+  ).value;
+
+  let tomadorInscricao = document.getElementById(
+    "tomador-inscricaoMunicipal"
+  ).value;
+
+  let valor = document.getElementById("valor").value;
+
   return (
-    isNaN(document.getElementById("prestador-documento").value) ||
-    isNaN(document.getElementById("tomador-documento").value) ||
-    isNaN(document.getElementById("valor").value)
+    isNaN(prestadorDocumento) ||
+    isNaN(tomadorDocumento) ||
+    isNaN(valor) ||
+    isNaN(prestadorInscricao) ||
+    isNaN(tomadorInscricao)
   );
   //isNan retorna verdadeiro se o argumento não for um número
 }
