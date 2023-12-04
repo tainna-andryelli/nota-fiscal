@@ -10,6 +10,7 @@ function salvaDados() {
       document.querySelector(".mensagemErro").innerHTML =
         "Atenção: Campos números foram preenchidos inadequadamente.";
     } else {
+      calculaImposto();
       let lista = [
         "nome",
         "documento",
@@ -109,4 +110,13 @@ function campoNumericoIncorreto() {
     isNaN(document.getElementById("valor").value)
   );
   //isNan retorna verdadeiro se o argumento não for um número
+}
+
+function calculaImposto() {
+  document.querySelector(".base__calculo").innerHTML =
+    document.getElementById("valor").value;
+
+  let imposto = (document.getElementById("valor").value * 5) / 100;
+
+  document.querySelector(".iss").innerHTML = imposto;
 }
