@@ -10,6 +10,14 @@ body {
   font-size: 2rem;
 }
 
+:root {
+  --branco: #fff;
+  --cinza-1: #e7e7e7;
+  --cinza-2: #757780;
+  --cinza-3: #141414;
+  --vermelho: #f15946;
+}
+
 .conteudo {
   max-width: 1200px;
   margin: 40px auto;
