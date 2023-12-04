@@ -43,19 +43,56 @@ function camposObrigatoriosNaoPreenchidos() {
     "endereco",
     "municipio",
   ];
+  let contador = 0;
+
+  if (document.getElementById("prestador-uf").value == "Selecione") {
+    mudaBordaParaVermelho("prestador-uf");
+    contador++;
+  } else {
+    tiraBordaVermelha("prestador-uf");
+  }
+
+  if (document.getElementById("tomador-uf").value == "Selecione") {
+    mudaBordaParaVermelho("tomador-uf");
+    contador++;
+  } else {
+    tiraBordaVermelha("tomador-uf");
+  }
+
+  if (document.getElementById("valor").value == "") {
+    mudaBordaParaVermelho("valor");
+    contador++;
+  } else {
+    tiraBordaVermelha("valor");
+  }
 
   for (let i = 0; i < camposObrigatorios.length; i++) {
     informacao = camposObrigatorios[i];
-    if (
-      document.getElementById("prestador-" + informacao).value == "" ||
-      document.getElementById("prestador-uf").value == "Selecione" ||
-      document.getElementById("tomador-" + informacao).value == "" ||
-      document.getElementById("tomador-uf") == "Selecione" ||
-      document.getElementById("valor").value == ""
-    ) {
-      return true;
+    if (document.getElementById("prestador-" + informacao).value == "") {
+      mudaBordaParaVermelho("prestador-" + informacao);
+      contador++;
+    } else {
+      tiraBordaVermelha("prestador-" + informacao);
+    }
+
+    if (document.getElementById("tomador-" + informacao).value == "") {
+      mudaBordaParaVermelho("tomador-" + informacao);
+      contador++;
+    } else {
+      tiraBordaVermelha("prestador-" + informacao);
     }
   }
 
+  if (contador > 0) {
+    return true;
+  }
   return false;
+}
+
+function mudaBordaParaVermelho(elemento) {
+  document.getElementById(elemento).style.border = "2px solid #f15946";
+}
+
+function tiraBordaVermelha(elemento) {
+  document.getElementById(elemento).style.border = "none";
 }
