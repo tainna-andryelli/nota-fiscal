@@ -79,7 +79,7 @@ function camposObrigatoriosNaoPreenchidos() {
       mudaBordaParaVermelho("tomador-" + informacao);
       contador++;
     } else {
-      tiraBordaVermelha("prestador-" + informacao);
+      tiraBordaVermelha("tomador-" + informacao);
     }
   }
 
