@@ -1,31 +1,36 @@
 function salvaDados() {
-  let lista = [
-    "nome",
-    "documento",
-    "inscricaoMunicipal",
-    "endereco",
-    "municipio",
-    "uf",
-  ];
-
   if (camposObrigatoriosNaoPreenchidos()) {
-    console.log(camposObrigatoriosNaoPreenchidos());
     document.querySelector(".mensagemErro").innerHTML =
       "Atenção: Campos obrigatórios não foram preenchidos.";
   } else {
-    for (let i = 0; i < lista.length; i++) {
-      let informacao = lista[i];
-      document.querySelector(".prestador-" + informacao).innerHTML =
-        document.getElementById("prestador-" + informacao).value;
+    if (campoNumericoIncorreto()) {
+      mudaBordaParaVermelho("prestador-documento");
+      mudaBordaParaVermelho("tomador-documento");
+      mudaBordaParaVermelho("valor");
+      document.querySelector(".mensagemErro").innerHTML =
+        "Atenção: Campos números foram preenchidos inadequadamente.";
+    } else {
+      let lista = [
+        "nome",
+        "documento",
+        "inscricaoMunicipal",
+        "endereco",
+        "municipio",
+        "uf",
+      ];
+      for (let i = 0; i < lista.length; i++) {
+        let informacao = lista[i];
+        document.querySelector(".prestador-" + informacao).innerHTML =
+          document.getElementById("prestador-" + informacao).value;
 
-      document.querySelector(".tomador-" + informacao).innerHTML =
-        document.getElementById("tomador-" + informacao).value;
+        document.querySelector(".tomador-" + informacao).innerHTML =
+          document.getElementById("tomador-" + informacao).value;
 
-      document.querySelector(".municipio").innerHTML = document.getElementById(
-        "prestador-municipio"
-      ).value;
+        document.querySelector(".municipio").innerHTML =
+          document.getElementById("prestador-municipio").value;
+      }
+      limparCampos();
     }
-    limparCampos();
   }
 }
 
@@ -95,4 +100,13 @@ function mudaBordaParaVermelho(elemento) {
 
 function tiraBordaVermelha(elemento) {
   document.getElementById(elemento).style.border = "none";
+}
+
+function campoNumericoIncorreto() {
+  return (
+    isNaN(document.getElementById("prestador-documento").value) ||
+    isNaN(document.getElementById("tomador-documento").value) ||
+    isNaN(document.getElementById("valor").value)
+  );
+  //isNan retorna verdadeiro se o argumento não for um número
 }

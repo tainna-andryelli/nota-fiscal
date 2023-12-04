@@ -73,6 +73,10 @@ body {
   margin-bottom: 10px;
 }
 
+.documento__span {
+  font-size: 1rem;
+}
+
 .formulario .campo:focus {
   box-shadow: 0 0 0 0;
   outline: 0;
