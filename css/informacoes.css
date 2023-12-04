@@ -1,7 +1,7 @@
 .conteudo__titulo {
   text-align: center;
   text-transform: uppercase;
-  color: #141414;
+  color: var(--cinza-3);
   padding: 40px;
   line-height: 1;
 }
@@ -9,7 +9,7 @@
 .informacoes {
   font-size: 1.5rem;
   padding: 40px;
-  background-color: #e7e7e7;
+  background-color: var(--cinza-1);
   border-radius: 4px;
   margin-bottom: 40px;
 }
@@ -19,8 +19,8 @@
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 40px;
-  color: #fff;
-  background-color: #757780;
+  color: var(--branco);
+  background-color: var(--cinza-2);
   padding: 10px;
   border-radius: 4px;
 }
@@ -39,13 +39,13 @@
 }
 
 .formulario label {
-  color: #141414;
+  color: var(--cinza-3);
   width: 100%;
 }
 
 .formulario .campo {
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--branco);
   border: none;
   font-size: 1.125rem;
   border-radius: 4px;
@@ -68,7 +68,7 @@
 
 .botaoSalvar .alerta {
   font-size: 1rem;
-  color: #f15946;
+  color: var(--vermelho);
   margin-bottom: 20px;
 }
 
@@ -77,8 +77,8 @@
   font-size: 1.5rem;
   border-radius: 4px;
   border: none;
-  background-color: #f15946;
-  color: #fff;
+  background-color: var(--vermelho);
+  color: var(--branco);
 }
 
 .mensagemErro {
